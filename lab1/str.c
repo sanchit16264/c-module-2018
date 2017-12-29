@@ -28,3 +28,23 @@ int my_strncasecmp(const char *s1, const char *s2, int len)
 	} while (--len);
 	return (int)c1 - (int)c2;
 }
+
+char *strcpy(char *dest, const char *src)
+{
+	while(*src)
+	{
+		*dest = *src
+		src++;
+		dest++;	
+	}
+	*dest = '\0';
+	return *dest;
+}
+
+char *my_strncpy(char *dest, const char *src, int count)
+{
+	
+	
+}
+
+
