@@ -43,12 +43,13 @@ char *strcpy(char *dest, const char *src)
 
 char *my_strncpy(char *dest, const char *src, int count)
 {
-	char *tmp = dest;
+	char *curr = dest;
 
 	while (count) {
-		if ((*tmp = *src) != 0)
+		if ((*curr = *src) &&(*curr != 0)){
 			src++;
-		tmp++;
+		}
+		curr++;
 		count--;
 	}
 	return dest;
@@ -57,31 +58,31 @@ char *my_strncpy(char *dest, const char *src, int count)
 
 char *strcat(char *dest, const char *src)
 {
-	char *tmp = dest;
+	char *curr = dest;
 
 	while (*dest)
 		dest++;
-	while ((*dest++ = *src++) != '\0')
+	while ((*dest++ = *src++) && (*src != '\0'))
 		;
-	return tmp;
+	return curr;
 	
 }
 
 char *my_strncat(char *dest, const char *src, int count)
 {
-	char *tmp = dest;
+	char *curr = dest;
 
 	if (count) {
 		while (*dest)
 			dest++;
-		while ((*dest++ = *src++) != 0) {
+		while ((*dest++ = *src++) && (*dest != 0) {
 			if (--count == 0) {
 				*dest = '\0';
 				break;
 			}
 		}
 	}
-	return tmp;
+	return curr;
 	
 }
 
@@ -185,7 +186,7 @@ int my_strlen(const char *s)
 	const char *sc;
 
 	for (sc = s; *sc != '\0'; ++sc)
-		/* nothing */;
+		;
 	return sc - s;
 }
 
@@ -194,7 +195,7 @@ int strnlen(const char *s, int count)
 	const char *sc;
 
 	for (sc = s; count-- && *sc != '\0'; ++sc)
-		/* nothing */;
+		;
 	return sc - s;
 }
 void *my_memset(void *s, int c, int count)
