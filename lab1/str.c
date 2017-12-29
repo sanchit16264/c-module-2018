@@ -76,7 +76,8 @@ char *my_strncat(char *dest, const char *src, int count)
 		while (*dest)
 			dest++;
 		while ((*dest++ = *src++) && (*dest != 0) {
-			if (--count == 0) {
+			count--;
+			if (count == 0) {
 				*dest = '\0';
 				break;
 			}
@@ -88,7 +89,7 @@ char *my_strncat(char *dest, const char *src, int count)
 
 int strcmp(const char *cs, const char *ct)
 {
-		unsigned char c1, c2;
+		 char c1, c2;
 
 	while (1) {
 		c1 = *cs++;
@@ -104,7 +105,7 @@ int strcmp(const char *cs, const char *ct)
 
 int my_strncmp(const char *cs, const char *ct, int count)
 {
-	unsigned char c1, c2;
+	 char c1, c2;
 
 	while (count) {
 		c1 = *cs++;
