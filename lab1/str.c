@@ -47,4 +47,13 @@ char *my_strncpy(char *dest, const char *src, int count)
 	
 }
 
+char *strcat(char *dest, const char *src)
+{
+	
+	
+}
+
+char 
+
+	
 
